@@ -1,3 +1,4 @@
+const Moon = require("moonjs");
 const VOID_ELEMENTS = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
 
 const renderNode = function(node) {
