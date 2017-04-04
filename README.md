@@ -116,3 +116,7 @@ server.get('/', (req, res) => {
 // Start the Server on http://localhost:3000
 server.listen(3000);
 ```
+
+#### License
+
+Licensed under the [MIT License](https://kingpixil.github.io/license) by [Kabir Shah](https://kabir.ml)
