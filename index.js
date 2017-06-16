@@ -1,42 +1,50 @@
-const Moon = require("moonjs");
+global.Moon = require("moonjs");
 const VOID_ELEMENTS = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
 
 const renderNode = function(node) {
-	var html = "";
+	let html = "";
   if(node.type === "#text") {
     // Text
   	html += node.val;
-  } else if(node.meta.component) {
+  } else if(node.meta.component !== undefined) {
     // Component
     const componentInstance = new node.meta.component.CTor();
     html += renderNode(componentInstance.render());
   } else {
     // Normal HTML
   	html += `<${node.type} `;
-    for(var prop in node.props.attrs) {
-    	html += `${prop}=${JSON.stringify(node.props.attrs[prop])} `
+    const attrs = node.props.attrs;
+
+    for(let prop in attrs) {
+    	html += `${prop}=${JSON.stringify(attrs[prop])} `;
     }
+
     html = html.slice(0, -1);
     html += ">";
-  	for(var i = 0; i < node.children.length; i++) {
+
+  	for(let i = 0; i < node.children.length; i++) {
   		html += renderNode(node.children[i]);
   	}
+
     if(VOID_ELEMENTS.indexOf(node.type) === -1) {
       html += `</${node.type}>`;
     } else {
       html = html.slice(0, -1) + "/>";
     }
   }
+
   return html;
 }
 
 const renderToString = function(instance) {
-	var html = "";
-  if(instance.$opts.template) {
-    instance.$render = Moon.compile(instance.$opts.template)
+	const options = instance.$options;
+  const render = options.render;
+
+  if(render === undefined) {
+    instance.$render = Moon.compile(options.template);
   }
-  html += renderNode(instance.render());
-  return html;
+
+  return renderNode(instance.render());
 }
 
 module.exports = {
