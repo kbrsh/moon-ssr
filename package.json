@@ -1,6 +1,6 @@
 {
   "name": "moon-ssr",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Server Side Rendering for Moon",
   "main": "index.js",
   "scripts": {
