@@ -23,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/KingPixil/moon-ssr/issues"
   },
-  "homepage": "https://github.com/KingPixil/moon-ssr#readme",
-  "dependencies": {
-    "moonjs": "latest"
-  }
+  "homepage": "https://github.com/KingPixil/moon-ssr#readme"
 }

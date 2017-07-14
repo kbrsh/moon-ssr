@@ -32,8 +32,9 @@ const renderNode = function(node) {
 
 const renderToString = function(instance) {
 	var html = "";
-  if(instance.$opts.template) {
-    instance.$render = Moon.compile(instance.$opts.template)
+	var template = null;
+  if((template = instance.$opts.template) !== undefined) {
+    instance.$render = Moon.compile(template);
   }
   html += renderNode(instance.render());
   return html;
