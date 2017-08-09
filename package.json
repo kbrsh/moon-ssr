@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "description": "Server Side Rendering for Moon",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingPixil/moon-ssr.git"
+    "url": "git+https://github.com/kbrsh/moon-ssr.git"
   },
   "keywords": [
     "ssr",
@@ -21,7 +18,7 @@
   "author": "Kabir Shah",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KingPixil/moon-ssr/issues"
+    "url": "https://github.com/kbrsh/moon-ssr/issues"
   },
-  "homepage": "https://github.com/KingPixil/moon-ssr#readme"
+  "homepage": "https://github.com/kbrsh/moon-ssr#readme"
 }
