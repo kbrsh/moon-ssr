@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/kbrsh/moon-ssr/issues"
   },
-  "homepage": "https://github.com/kbrsh/moon-ssr#readme"
+  "homepage": "https://github.com/kbrsh/moon-ssr#readme",
+  "dependencies": {
+    "moonjs": "github:kbrsh/moon"
+  }
 }
